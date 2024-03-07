@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/style.css">
+    <title>Document</title>
+    
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo-container">
+                Raus TR OÜ
+            </div>
+            <ul>
+                <li><a href="#">Avaleht</a></li>
+                <li><a href="#teenused">Teenused</a></li>
+                <li><a href="#contact">Kontakt</a></li>
+                <li><a href="#contact">Masina park</a></li>
+                <li><a href="#contact">Masinad müügiks</a></li>
+                <li><a href="#contact">Galerii</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="ees">
+        <div class="ees-content" id="slideshow">
+            <img src="../static/kruus2.jpg" alt="Image 1">
+            <img src="../static/toru.jpg" alt="Image 2">
+            <img src="../static/raudtee.jpg" alt="Image 3">
+            <img src="../static/kraav.jpg" alt="Image 4">
+            <!-- Add more images as needed -->
+        </div>
+        <div class="text-overlay">
+            <h3>Your Text Here</h3>
+            <p>Additional information or description</p>
+        </div>
+    </div>
+
+   
+    <section id="teenused">
+        <h2>Teenused</h2>
+        <ul>
+            <li>Teede ehitus ja teehooldus</li>
+            <li>maakuivendus- ja maaparandustööd</li>
+            <li>Kaubavedu maanteel</li>
+            <li>muud kaeve- ja mullatööd</li>
+            <li>rasketehnika rent</li>
+            <li>tee- ja kraavitrasside raadamine</li>
+            <!-- Add more list items as needed -->
+        </ul>
+        <div href="#contact" class = "box"> </div>
+    </section>
+    <div class="center">
+        <h1><a href="#gallery">Gallery</a></h1>
+    </div>
+    <div class = "row">
+        <div class="inside">
+        
+                <img src="../static/kruusp.jpg" width="360" height="200" alt="">
+
+        </div>
+
+        <div class="inside">
+            <img src="../static/kruus2.jpg" width="360" height="200" alt="">
+        </div>
+        <div class="inside">
+            <img src="../static/kruus1.jpg" width="360" height="200" alt="">
+        </div>
+        <div class="inside">
+            <img src="../static/ekskavaator.jpg" width="360" height="200" alt="">
+        </div>
+    </div>
+    
+</body>
+<script>
+    let currentIndex = 0;
+const images = document.querySelectorAll('#slideshow img');
+
+function showImage(index) {
+    images.forEach((img, i) => {
+        img.style.display = i === index ? 'block' : 'none';
+    });
+}
+
+function nextImage() {
+    currentIndex = (currentIndex + 1) % images.length;
+    showImage(currentIndex);
+}
+
+// Set interval to switch images every 5 seconds (5000 milliseconds)
+setInterval(nextImage, 5000);
+
+// Initial display
+showImage(currentIndex);
+</script>
+
+</html>

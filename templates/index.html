@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../static/stiil.css">
+    <title>Raus TR OÜ</title>
+</head>
+<body>
+    <header>
+        <div id="navbar">
+            <div class="logo-container">
+                Raus TR OÜ
+            </div>
+            <ul>
+                <li><a href="/">Avaleht</a></li>
+                <li><a href="/#teenused">Teenused</a></li>
+                <li><a href="#contact">Kontakt</a></li>
+                <li><a href="/park">Masina park</a></li>
+                <li><a href="/müük">Masinad müügiks</a></li>
+                <li><a href="/galerii">Galerii</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="ees">
+        <div class="ees-content" id="slideshow">
+            <img src="../static/kruusp.jpg" alt="Image 1">
+            <img src="../static/kruus1.jpg" alt="Image 2">
+            <img src="../static/kruus2.jpg" alt="Image 3">
+            <img src="../static/kall.png" alt="Image 4">
+            <img src="../static/lao.jpg" alt="Image 5">
+            
+            <!-- Add more images as needed -->
+        </div>
+        <div class="text-overlay">
+            <h3>Your Text Here</h3>
+            <p>Additional information or description</p>
+        </div>
+        <button class="prev-btn" onclick="prevImage()">❮</button>
+        <button class="next-btn" onclick="nextImage()">❯</button>
+    </div>
+
+   
+    <section id="teenused">
+        <h2>Teenused</h2>
+        <div class="list-container">
+            <div class="list-item"><li>Teede ehitus ja teehooldus</li>
+                <h4 class="item-info">Greideri/teehöövli teenus, purukruusa laotamine kattekihiks kruusateedele</h4>
+            </div>
+            <div class="list-item"><li>Maakuivendus- ja maaparandustööd</li>
+                <h4 class="item-info">Uute kraavide rajamine, vanade renoveerimine ja settest tühjendamine</h4></div>
+            <div class="list-item"><li>Kaubavedu maanteel</li>
+                <h4 class="item-info">Kaubavedu raskeveotreileriga ja kalluritega</h4></div>
+            <div class="list-item"><li>Muud kaeve- ja mullatööd</li>
+                <h4 class="item-info">Tiikide kaevamine</h4></div>
+            <div class="list-item"><li>Rasketehnika rent</li>
+                <h4 class="item-info">Rendime ekskavaatoreid, laadureid, buldoosrit jne</h4></div>
+            <div class="list-item"><li>Tee- ja kraavitrasside raadamine</li>
+                <h4 class="item-info">Lõikus harvesteri ja giljotiiniga ja väljavedu</h4></div>
+                
+            <!-- Add more list items as needed -->
+        </div>
+       
+    </section>
+    
+
+    <footer>
+        <section href="#contact" id="contact">
+            <h2>KONTAKT</h2>
+            <p>Küsimuste korral või hinnapakkumise saamiseks võta meiega ühendust!</p>
+            <p>Email: info@example.com</p>
+            <p>Phone: +372 5</p>
+        </section>
+    </footer>
+    
+</body>
+<script>
+
+window.onscroll = function() {myFunction()};
+
+// Get the navbar
+var navbar = document.getElementById("navbar");
+
+// Get the offset position of the navbar
+var sticky = navbar.offsetTop;
+
+// Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
+
+
+
+let currentIndex = 0;
+const images = document.querySelectorAll('#slideshow img');
+let intervalId; // Variable to store the interval ID
+
+function showImage(index) {
+    images.forEach((img, i) => {
+        img.style.display = i === index ? 'block' : 'none';
+    });
+}
+
+function nextImage() {
+    currentIndex = (currentIndex + 1) % images.length;
+    showImage(currentIndex);
+    restartInterval();
+}
+
+function prevImage() {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    showImage(currentIndex);
+    restartInterval();
+}
+
+function restartInterval() {
+    clearInterval(intervalId); // Clear the existing interval
+    intervalId = setInterval(nextImage, 5000); // Set a new interval
+}
+
+intervalId = setInterval(nextImage, 5000); // Initial interval
+
+showImage(currentIndex);
+
+</script>
+
+</html>

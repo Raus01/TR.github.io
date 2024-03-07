@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../static/stiil.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <div id="navbar">
+            <div class="logo-container">
+                Raus TR OÜ
+            </div>
+            <ul>
+                <li><a href="/">Avaleht</a></li>
+                <li><a href="/#teenused">Teenused</a></li>
+                <li><a href="#contact">Kontakt</a></li>
+                <li><a href="/park">Masina park</a></li>
+                <li><a href="/müük">Masinad müügiks</a></li>
+                <li><a href="/galerii">Galerii</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="center">
+        <h1><a>Masina Park</a></h1>
+    </div>
+    <div class="row">
+       
+        <div class="inside">
+            <img class="pilt" src="../static/bull.jpg"  alt="">
+        </div>
+        <div class="inside">
+            <img class="pilt" src="../static/ekskavaator.jpg"  alt="">
+        </div>
+        <div class="inside">
+            <img class="pilt" src="../static/kruusp.jpg"  alt="">
+        </div>
+        <div class="inside">
+            <img class="pilt" src="../static/kall.png"  alt="">
+        </div>
+    </div>
+
+    <footer>
+        <section href="#contact" id="contact">
+            <h2>KONTAKT</h2>
+            <p>Küsimuste korral või hinnapakkumise saamiseks võta meiega ühendust!</p>
+            <p>Email: info@example.com</p>
+            <p>Phone: +372 5</p>
+        </section>
+    </footer>
+    
+    <script>
+        window.onscroll = function() {myFunction()};
+        
+        // Get the navbar
+        var navbar = document.getElementById("navbar");
+        
+        // Get the offset position of the navbar
+        var sticky = navbar.offsetTop;
+        
+        // Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+        function myFunction() {
+          if (window.pageYOffset >= sticky) {
+            navbar.classList.add("sticky")
+          } else {
+            navbar.classList.remove("sticky");
+          }
+        }
+    </script>
+
+</body>
+</html>
